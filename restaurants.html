@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurants - Food Express</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-danger" href="index.html">Food Express</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="restaurants.html">Restaurants</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          <div class="ms-3 d-flex align-items-center">
+            <div class="search-container me-3">
+              <form id="searchForm" class="d-flex">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search restaurants...">
+                <button type="submit" class="btn btn-danger ms-2">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+            <a href="login.html" class="btn btn-outline-danger me-2" id="loginBtn">Login / Signup</a>
+            <a href="#" class="btn btn-danger position-relative" id="cart-btn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark cart-count">0</span>
+            </a>
+            <div class="dropdown ms-3 d-none" id="profileDropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <span id="profileInitial">U</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" id="profileBtn">Profile</a></li>
+                <li><a class="dropdown-item" href="profile.html">My Orders</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h1 class="mb-4">Our Restaurants</h1>
+    <div class="row" id="restaurants-container">
+      <!-- Restaurants loaded by script.js -->
+    </div>
+  </main>
+
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-items"></div>
+          <div class="d-flex justify-content-between mt-3">
+            <h5>Total:</h5>
+            <h5>₹<span id="cart-total">0.00</span></h5>
+          </div>
+        </div>
+        <!-- Replace the existing modal footer with this -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+  <button type="button" class="btn btn-danger checkout-btn">
+    <i class="fas fa-shopping-bag me-2"></i>Proceed to Payment
+  </button>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Food Express. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
